@@ -1,0 +1,27 @@
+{
+  "name": "dryruntransactionblockresponseplus",
+  "version": "0.0.0 - develpoment",
+  "description": "dryruntransactionblockresponseplus",
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
+  "author": {
+    "name": "Mysten Labs",
+    "email": "",
+    "url": "https://mystenlabs.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@mysten/sui.js": "^0.54.1"
+  }
+}
