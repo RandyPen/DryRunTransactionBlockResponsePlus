@@ -1,4 +1,4 @@
-import type { DryRunTransactionBlockResponse } from "@mysten/sui.js/client/types/index.js";
+import type { DryRunTransactionBlockResponse } from "@mysten/sui.js/client";
 
 export interface BalanceChange {
   /**
@@ -50,7 +50,7 @@ export const parseDryRunResult = (
   const mutatedObjects: SuiObjectChange[] = [];
 
   for (const balanceChange of balanceChanges) {
-    if (balanceChange.owner.AddressOwner !== sender) {
+    if ((balanceChange.owner as {AddressOwner:string}).AddressOwner !== sender) {
       continue;
     }
     const newBalanceChange: BalanceChange = {
@@ -66,7 +66,7 @@ export const parseDryRunResult = (
 
   for (const objectChange of objectChanges) {
     if (objectChange.type === "transferred") {
-      if (objectChange.sender === objectChange.recipient.AddressOwner) {
+      if (objectChange.sender === (objectChange.recipient as {AddressOwner:string}).AddressOwner) {
         continue;
       }
       if (objectChange.sender === sender) {
@@ -78,7 +78,10 @@ export const parseDryRunResult = (
         };
         lessObjects.push(newObjectChange);
       }
-      if (objectChange.recipient.AddressOwner === sender) {
+      if (
+        (objectChange.recipient as { AddressOwner: string }).AddressOwner ===
+        sender
+      ) {
         const newObjectChange: SuiObjectChange = {
           objectId: objectChange.objectId,
           objectType: objectChange.objectType,
