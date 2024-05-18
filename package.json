@@ -1,14 +1,10 @@
 {
   "name": "dryruntransactionblockresponseplus",
-  "version": "0.0.0 - develpoment",
-  "description": "dryruntransactionblockresponseplus",
+  "version": "0.0.1",
+  "description": "Redesign DryRunTransactionBlockResponse interface, highlight SenderChange.",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
-  "author": {
-    "name": "Mysten Labs",
-    "email": "",
-    "url": "https://mystenlabs.com"
-  },
+  "author": "SuiSec",
   "license": "MIT",
   "scripts": {
     "build": "tsc"
