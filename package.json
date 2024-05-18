@@ -1,6 +1,6 @@
 {
   "name": "dryruntransactionblockresponseplus",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Redesign DryRunTransactionBlockResponse interface, highlight SenderChange.",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
